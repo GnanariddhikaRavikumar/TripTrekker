@@ -3,7 +3,7 @@ import PackageSlice from "./PackageSlice";
 
 const Store = configureStore({
     reducer:{
-        tour:PackageSlice,
+        package:PackageSlice,
     }
 })
 

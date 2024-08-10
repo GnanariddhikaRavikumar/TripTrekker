@@ -7,6 +7,7 @@ import Login from './Components/Login.jsx'
 import Signup from './Components/Signup.jsx'
 import { Provider } from 'react-redux'
 import Store from './Redux/Store.js'
+import Packages from './Components/Package.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/' element={<App/>}></Route>
         <Route path="/login-user" element={<Login/>}></Route>
         <Route path='/signup-user' element={<Signup/>}></Route>
+        <Route path='/place-details' element={<Packages/>}></Route>
       </Routes>
     </BrowserRouter>
     </Provider>

@@ -1,6 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { findpackage } from "../Redux/PackageSlice";
+
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const handlePackageClick = (packageName) => () => {
+    dispatch(findpackage(packageName));
+  };
+
   return (
     <>
       <nav>
@@ -10,36 +19,36 @@ const Header = () => {
           <div className="dropdown">
             <h5 className="dropdown-btn">INDIA PACKAGES</h5>
             <div className="dropdown-content">
-              <a href="#">Kerala</a>
-              <a href="#">Goa</a>
-              <a href="#">Delhi-Agra</a>
+              <Link to="/place-details" onClick={handlePackageClick("Kerala")}>Kerala</Link>
+              <Link to="/place-details" onClick={handlePackageClick("Goa")}>Goa</Link>
+              <Link to="/place-details" onClick={handlePackageClick("Delhi-Agra")}>Delhi-Agra</Link>
               <button>VIEW MORE</button>
             </div>
           </div>
           <div className="dropdown">
             <h5 className="dropdown-btn">INTERNATIONAL PACKAGES</h5>
             <div className="dropdown-content">
-              <a href="#">London</a>
-              <a href="#">Bali</a>
-              <a href="#">Dubai</a>
+              <Link to="/place-details" onClick={handlePackageClick("London")}>London</Link>
+              <Link to="/place-details" onClick={handlePackageClick("Bali")}>Bali</Link>
+              <Link to="/place-details" onClick={handlePackageClick("Dubai")}>Dubai</Link>
               <button>VIEW MORE</button>
             </div>
           </div>
           <div className="dropdown">
             <h5 className="dropdown-btn">CRUISE PACKAGES</h5>
             <div className="dropdown-content">
-              <a href="#">Package 1</a>
-              <a href="#">Package 2</a>
-              <a href="#">Package 3</a>
+              <Link to="/place-details" onClick={handlePackageClick("Package 1")}>Package 1</Link>
+              <Link to="/place-details" onClick={handlePackageClick("Package 2")}>Package 2</Link>
+              <Link to="/place-details" onClick={handlePackageClick("Package 3")}>Package 3</Link>
               <button>VIEW MORE</button>
             </div>
           </div>
           <div className="dropdown">
             <h5 className="dropdown-btn">SUMMER VACATION</h5>
             <div className="dropdown-content">
-              <a href="#">Andaman Island</a>
-              <a href="#">Coorg </a>
-              <a href="#">Darjeeling</a>
+              <Link to="/place-details" onClick={handlePackageClick("Andaman Island")}>Andaman Island</Link>
+              <Link to="/place-details" onClick={handlePackageClick("Coorg")}>Coorg</Link>
+              <Link to="/place-details" onClick={handlePackageClick("Darjeeling")}>Darjeeling</Link>
               <button>VIEW MORE</button>
             </div>
           </div>
@@ -49,5 +58,6 @@ const Header = () => {
     </>
   );
 };
+
 
 export default Header;

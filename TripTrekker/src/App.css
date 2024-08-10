@@ -204,7 +204,7 @@ footer>.cp>h4{
 .review .box1{
     margin-left: 20px;
     border: 1px solid rgb(201, 192, 192);
-    height:450px;
+    height:455px;
     width:300px;
     border-radius: 10px;
 }
@@ -228,6 +228,7 @@ footer>.cp>h4{
 
 .review .box1>p{
   margin:5px;
+  text-align: justify;
 }
 
 .topseller {
